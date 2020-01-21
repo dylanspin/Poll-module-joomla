@@ -11,7 +11,11 @@
 
     $helper = new ModPoll();//helper class 
 
+<<<<<<< HEAD
     if(!$helper->select($idVraag)){//maakt een nieuwe row aan in de database mocht de aangeven nummer nog niet bestaan
+=======
+    if(!$helper->select($idVraag)){//maakt een nieuwe aan mocht de aangeven nummer nog niet bestaan
+>>>>>>> master
         $helper->insert($vraag,$idVraag);
     } 
 
@@ -24,7 +28,11 @@
     $css = ".PollVraag{
               background-color:".$achtergrond.";
               color: ".$textKleur.";
+<<<<<<< HEAD
             }";//add extra css
+=======
+            }";
+>>>>>>> master
 
     $doc->addStyleDeclaration($css);//add de css aan style.css
 
@@ -41,6 +49,7 @@
             $stats[$_POST['pollAntwoord']] += 1;//doet een bij de oude aantal score
             $helper->update($idVraag,$stats[$_POST['pollAntwoord']],"antwoord".$_POST['pollAntwoord']);//updates de values
             $_SESSION['voted'] = true;//set session 
+<<<<<<< HEAD
             $helper->refresh();//refresht
         }
     }
@@ -66,6 +75,27 @@
                   echo "<button name='pollAntwoord' class='pollAntwoorden' value='$i'>$antwoorden[$i]</button>";
               } 
           }
+=======
+            $helper->refresh();//refres
+        }
+    }
+?>
+  <form class="poll" method="post"><!--Breede poll met open functie -->
+    <div class="PollVraag"><?php echo $vraag; ?></div>
+    <div class="closePoll" onclick="openPoll()" id='icon'><i class="fa fa-minus" aria-hidden="true"></i></div>
+    <div class="innerPoll" id='innerPoll'>
+      <?php 
+        if(isset($_SESSION['voted'])){
+            for($i=1; $i<=4; $i++){//mischien een message van bedankt voor het stemmen
+                echo "<div class='procent'><div class='overlay' style='width:$procenten[$i]%;'></div>".$procenten[$i]."%</div>";
+            }
+        }
+        else{
+            for($i=1; $i<=4; $i++){
+                echo "<button name='pollAntwoord' class='pollAntwoorden' value='$i'>$antwoorden[$i]</button>";
+            } 
+        }
+>>>>>>> master
        ?>
      </div>
      <input type="text" value="" name='valuePoll' class="pollFake" id='pollfake'>
