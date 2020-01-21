@@ -2,13 +2,8 @@
 
 .poll{
 	position: relative;
-<<<<<<< HEAD
 	left: 0;
 	top: 0;
-=======
-	left: 20%;
-	top: 10%;
->>>>>>> master
 	width: 300px;
 	height: auto;
 	border:2px solid #171717;
@@ -22,26 +17,19 @@
 	left: 0;
 	font-size: 20px;
 }
-<<<<<<< HEAD
 .VraagInner{
 	position: relative;
 	padding: 2%;
 	padding-right: 5%;
 }
-=======
->>>>>>> master
 .pollAntwoorden{
 	position: relative;
 	left: 0;
 	top: 0;
 	width: 100%;
 	padding-left: 4%;
-<<<<<<< HEAD
 	min-height: 30px;
 	height: auto;
-=======
-	height: 30px;
->>>>>>> master
 	border:none;
 	background: none;
 	transition: 0.3s;
@@ -65,10 +53,6 @@
 }
 .innerPoll{
 	position: relative;
-<<<<<<< HEAD
-=======
-	/*height: auto;*/
->>>>>>> master
 	display: none;
 }
 .procent{
