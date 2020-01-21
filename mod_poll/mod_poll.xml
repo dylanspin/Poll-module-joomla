@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+	<name>Poll module</name>
+	<author>Dylan</author>
+	<version>1.0.0</version>
+	<description>Een Poll module</description>
+	<files>
+		<filename>mod_poll.xml</filename>
+		<filename module="mod_poll">mod_poll.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>sql/install.sql</filename>
+		<filename>sql/uninstall.sql</filename>
+		<folder>css</folder>
+		<folder>tmpl</folder>
+		<folder>js</folder>
+	</files>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+	    		<field name="module_kleur" type="color" label="Bericht kleur" default="#3072E5"/>
+	    	  	<field name="text_kleur" type="color" label="Text kleur" default="#FFFFFF"/>
+		        <field name="idvraag" type="number" label="Id Vraag" default="1"/>
+		        <field name="vraag" type="text" label="Vraag" default="Heb je een vraag?"/>
+				<field name="antwoord1" type="text" label="Antwoord1" default="Een antwoord"/>
+				<field name="antwoord2" type="text" label="Antwoord2" default="Een antwoord"/>
+				<field name="antwoord3" type="text" label="Antwoord3" default="Een antwoord"/>
+				<field name="antwoord4" type="text" label="Antwoord4" default="Een antwoord"/>
+			</fieldset>
+		</fields>
+	</config>
+	<!-- <updateserver>
+		<server type="extension" priority="1" name="Takties klantenscore update">
+	            http://update.takties.nl/mod_klant/update.xml
+	  </server>
+	</updateserver> -->
+</extension>
